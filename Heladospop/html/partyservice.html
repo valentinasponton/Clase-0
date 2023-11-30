@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="../css/styles.css"> 
+    <link rel="icon" type="image/x-icon" href="https://img.freepik.com/vector-gratis/ilustracion-icono-dibujos-animados-cono-helado-concepto-icono-comida-dulce-aislado-estilo-dibujos-animados-plana_138676-2924.jpg">
+    <title>Party Service</title>
+</head>
+<body>
+
+    <header class="header">
+        <h1>Helados POP</h1>
+        <div class="logo">
+            <img src="imagenes/logo helados.avif"  width="100" height="100" alt="Logo de la empresa">
+        </div>
+        <nav class="menu">
+            
+            <ul>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../html/locales.html">Locales</a></li>
+                <li><a href="../html/partyservice.html">Party Service</a></li>
+                <li><a href="../html/productos.html">Productos</a></li>
+                <li><a href="../html/contacto.html">Contacto</a></li>
+                
+            </ul>
+        </nav>
+    </header>
+
+    <form action="buscar.php" method="get" class="search-form">
+        <input type="text" name="q" class="search-input" placeholder="Buscar...">
+        <input type="submit" value="Buscar" class="search-button">
+    </form>
+<main>
+    <img class="imagen" src="https://preview.free3d.com/img/2015/02/2400300898497595361/o9acilqq.jpg" alt="Imagen relacionada">  
+    <div class="titulo-texto">
+            
+        <h1>Party Service</h1>
+        <p>¡Dale un toque dulce a tu cumpleaños! Alquila nuestro carrito de helados y sorprende a tus invitados con una variedad de sabores y toppings deliciosos. Contacta ahora para hacer de tu celebración un evento inolvidable. 🍦🎉.</p>
+    </div>
+</main>
+
+    <!-- Imagen -->
+    <img class="imagen" src="https://www.carrosparaeventos.es/wp-content/uploads/2020/02/CARROS-CUMPLE-JIMENA-1.jpg" width="455" height="450" alt="Imagen relacionada"> 
+     <!-- Contenedor del carrusel de imágenes -->
+     <div class="carrusel-container">
+        <div class="carrusel-item">
+            <img src="https://i.pinimg.com/736x/db/24/9e/db249ec5469435b608325ff6d8f49004.jpg" width="250" height="250" alt="Producto 1">
+        </div>
+        <div class="carrusel-item">
+            <img src="https://i.pinimg.com/736x/6d/33/e5/6d33e5180e497e40bed7064973899086.jpg" width="250" height="250" alt="Producto 2">
+        </div>
+        <div class="carrusel-item">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRTlCvqlZGqdjgeprGkDS54pxbojb-QNXSNOyG4y5ffwqYNXsZ2aXJKolBVGFjEdPuFTIo&usqp=CAU" alt="Producto 3">
+        </div>
+        <div class="carrusel-item">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS8dvvDJb9gVxrwVm9l73HMiseBufZx-qtI0SI450Fm_1i7JpBvPju6u6Hb7aPBqC71VDg&usqp=CAU" alt="Producto 4">
+        </div>
+    </div>
+
+    <!-- Botones de navegación del carrusel -->
+    <div class="carrusel-controls">
+        <button onclick="carruselAnterior()">&#10094; Anterior</button>
+        <button onclick="carruselSiguiente()">Siguiente &#10095;</button>
+    </div>
+
+    <script>
+        // Funciones para controlar el carrusel
+        let carruselPosicion = 0;
+
+        function carruselSiguiente() {
+            carruselPosicion++;
+            mostrarCarrusel();
+        }
+
+        function carruselAnterior() {
+            carruselPosicion--;
+            mostrarCarrusel();
+        }
+
+        function mostrarCarrusel() {
+            const carruselItems = document.querySelectorAll(".carrusel-item");
+            if (carruselPosicion < 0) {
+                carruselPosicion = carruselItems.length - 1;
+            }
+            if (carruselPosicion >= carruselItems.length) {
+                carruselPosicion = 0;
+            }
+            carruselItems.forEach((item, index) => {
+                item.style.display = index === carruselPosicion ? "block" : "none";
+            });
+        }
+
+        mostrarCarrusel();
+    </script> 
+    <form action="procesar_formulario.php" method="post">
+        <label for="nombre">Nombre y Apellido:</label>
+        <input type="text" id="nombre" name="nombre" required><br><br>
+
+        <label for="telefono">Teléfono:</label>
+        <input type="tel" id="telefono" name="telefono" required><br><br>
+
+        <label for="cantidad_personas">Cantidad de personas:</label>
+        <input type="number" id="cantidad_personas" name="cantidad_personas" required><br><br>
+
+        <label for="lugar">Lugar:</label>
+        <input type="text" id="lugar" name="lugar" required><br><br>
+
+        <input type="submit" value="Enviar">
+    </form>
+
+    <footer>
+        <div class="footer">
+        <div class="row">
+            <a href="#"><img src="imagenes/facebook.svg.svg" width="40" height="40" alt="Facebook"></a>
+            <a href="#"><img src="imagenes/instagram.svg.svg" width="40" height="40"alt="Instagram"></a>
+            <a href="#"><img src="imagenes/youtube-svg.svg" width="40" height="40"alt="YouTube"></a>
+            <a href="#"><img src="imagenes/tiktok.svg.svg" width="40" height="40" alt="Tik Tok"></a>
+        </div>
+        
+        <div class="row">
+        <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../html/locales.html">Locales</a></li>
+            <li><a href="../html/partyservice.html">Party Service</a></li>
+            <li><a href="../html/productos.html">Productos</a></li>
+            <li><a href="../html/contacto.html">Contacto</a></li>
+        </ul>
+        </div>
+        
+        <div class="row">
+            <p>Helados POP © 2023. Todos los derechos reservados.</p>
+        </div>
+        </div>
+        </footer>
+</body>
+</html>
